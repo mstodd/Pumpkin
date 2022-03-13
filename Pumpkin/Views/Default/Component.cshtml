@@ -1,0 +1,11 @@
+@using Sitecore.LayoutService.Client.Response.Model.Fields
+@using Sitecore.AspNet.RenderingEngine.Extensions
+
+@{
+	var heading = this.SitecoreRoute().ReadField<TextField>("Title");
+	//var image = this.SitecoreRoute().ReadField<ImageField>("Image");
+	var text = this.SitecoreRoute().ReadField<RichTextField>("Text");
+}
+
+<h1 asp-for="@heading"></h1>
+<sc-text asp-for="@text" editable="true"></sc-text>
